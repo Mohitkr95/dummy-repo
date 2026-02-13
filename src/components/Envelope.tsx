@@ -170,10 +170,10 @@ export default function Envelope({ onOpen }: EnvelopeProps) {
         </div>
       </div>
 
-      <div className="absolute bottom-8 flex items-center gap-3 animate-fade-in-slow" style={{ color: '#b8978a' }}>
-        <Heart className="w-3.5 h-3.5 animate-heartbeat" fill="currentColor" style={{ filter: 'drop-shadow(0 2px 4px rgba(184,151,138,0.3))' }} />
-        <span className="font-body text-[10px] tracking-[0.3em] uppercase font-semibold">made with love</span>
-        <Heart className="w-3.5 h-3.5 animate-heartbeat" fill="currentColor" style={{ animationDelay: '0.3s', filter: 'drop-shadow(0 2px 4px rgba(184,151,138,0.3))' }} />
+      <div className="absolute bottom-8 flex items-center gap-2 animate-fade-in-slow opacity-40" style={{ color: '#9a7a68' }}>
+        <Heart className="w-2.5 h-2.5" fill="currentColor" />
+        <span className="font-body text-[9px] tracking-widest uppercase">made with love</span>
+        <Heart className="w-2.5 h-2.5" fill="currentColor" />
       </div>
     </div>
   );
