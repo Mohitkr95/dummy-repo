@@ -30,13 +30,21 @@ export default function Envelope({ onOpen }: EnvelopeProps) {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen px-4 select-none">
-      <div className="animate-fade-in-slow mb-12 text-center">
-        <p className="font-body text-sm tracking-[0.3em] uppercase mb-2 animate-text-glow" style={{ color: '#8a6a5a' }}>
-          a little something special
-        </p>
-        <p className="font-script text-2xl md:text-3xl tracking-wide animate-sway-gentle" style={{ color: '#7a5548' }}>
-          14th February
-        </p>
+      <div className="animate-fade-in-slow mb-16 text-center relative">
+        <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-32 h-32 rounded-full blur-3xl opacity-30" style={{ background: 'radial-gradient(circle, #ffd0b5 0%, transparent 70%)' }} />
+        <div className="relative">
+          <p className="font-body text-xs md:text-sm tracking-[0.35em] uppercase mb-3 font-semibold animate-text-glow" style={{ color: '#a5766a', letterSpacing: '0.4em' }}>
+            a little something special
+          </p>
+          <p className="font-script text-4xl md:text-5xl tracking-wide animate-sway-gentle mb-1" style={{ color: '#6e4538', textShadow: '0 2px 12px rgba(110,69,56,0.08)' }}>
+            14th February
+          </p>
+          <div className="flex items-center justify-center gap-2 mt-2">
+            <div className="w-8 h-px" style={{ background: 'linear-gradient(to right, transparent, #c9987e, transparent)' }} />
+            <Heart className="w-3 h-3 animate-heartbeat" fill="#c9987e" style={{ color: '#c9987e' }} />
+            <div className="w-8 h-px" style={{ background: 'linear-gradient(to right, transparent, #c9987e, transparent)' }} />
+          </div>
+        </div>
       </div>
 
       <div
@@ -63,80 +71,109 @@ export default function Envelope({ onOpen }: EnvelopeProps) {
             </div>
           ))}
 
-          <div className="relative w-72 h-48 md:w-[26rem] md:h-[17rem]">
+          <div className="relative w-80 h-52 md:w-[30rem] md:h-[20rem]">
             {showRings && (
               <>
                 <div
-                  className="absolute inset-0 rounded-3xl animate-ring-expand"
-                  style={{ border: '1px solid rgba(200,160,140,0.2)' }}
+                  className="absolute inset-0 rounded-[2rem] animate-ring-expand"
+                  style={{ border: '2px solid rgba(200,140,120,0.12)' }}
                 />
                 <div
-                  className="absolute inset-0 rounded-3xl animate-ring-expand"
-                  style={{ border: '1px solid rgba(200,160,140,0.15)', animationDelay: '0.5s' }}
+                  className="absolute inset-0 rounded-[2rem] animate-ring-expand"
+                  style={{ border: '2px solid rgba(200,140,120,0.08)', animationDelay: '0.5s' }}
+                />
+                <div
+                  className="absolute inset-0 rounded-[2rem] animate-ring-expand"
+                  style={{ border: '1px solid rgba(200,140,120,0.05)', animationDelay: '1s' }}
                 />
               </>
             )}
 
             <div
-              className="absolute inset-0 rounded-3xl overflow-hidden animate-envelope-hover"
+              className="absolute inset-0 rounded-[2rem] overflow-hidden animate-envelope-hover backdrop-blur-sm"
               style={{
-                background: 'linear-gradient(145deg, #fff9f5 0%, #fef0e8 30%, #fbe5da 70%, #f8ddd0 100%)',
-                boxShadow: '0 20px 60px -15px rgba(160,110,85,0.25), 0 0 0 1px rgba(200,160,140,0.25)',
+                background: 'linear-gradient(135deg, #fffcfa 0%, #fff5ef 20%, #ffe9dd 45%, #ffdece 70%, #ffdbcc 90%, #ffe5d9 100%)',
+                boxShadow: '0 25px 80px -20px rgba(150,90,70,0.35), 0 15px 40px -15px rgba(150,90,70,0.2), inset 0 1px 0 rgba(255,255,255,0.8), inset 0 -1px 0 rgba(200,150,130,0.15)',
+                border: '1px solid rgba(255,240,230,0.9)',
               }}
             >
-              <div className="absolute top-0 left-0 right-0 h-px animate-shimmer" style={{ background: 'linear-gradient(to right, transparent, rgba(210,170,150,0.5), transparent, rgba(210,170,150,0.3), transparent)' }} />
-              <div className="absolute bottom-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(to right, transparent, rgba(190,150,130,0.3), transparent)' }} />
+              <div className="absolute top-0 left-0 right-0 h-20 animate-shimmer" style={{ background: 'linear-gradient(to bottom, rgba(255,255,255,0.4) 0%, transparent 100%)' }} />
+              <div className="absolute inset-0 opacity-30" style={{ backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(255,210,180,0.4) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255,190,160,0.3) 0%, transparent 50%)' }} />
+
+              <div className="absolute top-0 left-0 right-0 h-px animate-shimmer" style={{ background: 'linear-gradient(to right, transparent, rgba(220,180,160,0.6), transparent, rgba(220,180,160,0.4), transparent)' }} />
 
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="relative inline-block mb-4">
-                    <Gift className="w-11 h-11 animate-float-rotate group-hover:animate-wiggle" strokeWidth={1.5} style={{ color: '#9e6e5c' }} />
-                    <Heart
-                      className="absolute -top-1 -right-2 w-4 h-4 animate-heartbeat"
-                      fill="#b5796a"
-                      style={{ color: '#b5796a' }}
-                    />
-                    <div
-                      className="absolute -top-3 -left-3 w-2 h-2 rounded-full animate-twinkle"
-                      style={{ backgroundColor: '#d4a894', animationDelay: '0.5s' }}
-                    />
-                    <div
-                      className="absolute -bottom-2 -right-3 w-1.5 h-1.5 rounded-full animate-twinkle"
-                      style={{ backgroundColor: '#c9987e', animationDelay: '1.5s' }}
-                    />
+                <div className="text-center relative z-10">
+                  <div className="relative inline-block mb-6">
+                    <div className="absolute inset-0 blur-xl opacity-40 animate-scale-breathe" style={{ background: 'radial-gradient(circle, #d4967e 0%, transparent 70%)' }} />
+                    <div className="relative">
+                      <Gift className="w-14 h-14 md:w-16 md:h-16 animate-float-rotate group-hover:animate-wiggle" strokeWidth={1.3} style={{ color: '#9e6e5c', filter: 'drop-shadow(0 4px 12px rgba(158,110,92,0.15))' }} />
+                      <Heart
+                        className="absolute -top-2 -right-3 w-5 h-5 animate-heartbeat"
+                        fill="#c97860"
+                        style={{ color: '#c97860', filter: 'drop-shadow(0 2px 8px rgba(201,120,96,0.25))' }}
+                      />
+                      <div
+                        className="absolute -top-4 -left-4 w-2.5 h-2.5 rounded-full animate-twinkle"
+                        style={{ backgroundColor: '#eab59e', animationDelay: '0.5s', boxShadow: '0 0 8px rgba(234,181,158,0.6)' }}
+                      />
+                      <div
+                        className="absolute -bottom-3 -right-4 w-2 h-2 rounded-full animate-twinkle"
+                        style={{ backgroundColor: '#d9a88e', animationDelay: '1.5s', boxShadow: '0 0 6px rgba(217,168,142,0.5)' }}
+                      />
+                      <div
+                        className="absolute top-1/2 -left-5 w-1.5 h-1.5 rounded-full animate-twinkle"
+                        style={{ backgroundColor: '#c9987e', animationDelay: '2.2s' }}
+                      />
+                    </div>
                   </div>
-                  <p className="font-script text-3xl md:text-4xl mb-1.5 animate-text-glow" style={{ color: '#6e4538' }}>Seetha</p>
-                  <p className="font-body text-xs tracking-[0.2em] uppercase font-semibold" style={{ color: '#9a7568' }}>with love</p>
+                  <p className="font-script text-4xl md:text-5xl mb-2.5 animate-text-glow tracking-wide" style={{ color: '#6e4538', textShadow: '0 2px 16px rgba(110,69,56,0.12), 0 4px 28px rgba(110,69,56,0.06)' }}>Seetha</p>
+                  <div className="flex items-center justify-center gap-2.5 mb-1">
+                    <div className="w-6 h-px" style={{ background: 'linear-gradient(to right, transparent, #b5796a)' }} />
+                    <p className="font-body text-[11px] tracking-[0.25em] uppercase font-bold" style={{ color: '#a5766a', letterSpacing: '0.3em' }}>with love</p>
+                    <div className="w-6 h-px" style={{ background: 'linear-gradient(to left, transparent, #b5796a)' }} />
+                  </div>
                 </div>
               </div>
+
+              <div className="absolute bottom-0 left-0 right-0 h-16 pointer-events-none" style={{ background: 'linear-gradient(to top, rgba(255,200,180,0.1) 0%, transparent 100%)' }} />
             </div>
 
             <div
-              className="absolute -inset-6 rounded-[2rem] -z-10 blur-2xl group-hover:blur-3xl transition-all duration-500 animate-scale-breathe"
-              style={{ background: 'radial-gradient(ellipse, rgba(210,170,150,0.25) 0%, transparent 70%)' }}
+              className="absolute -inset-8 rounded-[2.5rem] -z-10 blur-3xl group-hover:blur-[60px] transition-all duration-700 animate-scale-breathe"
+              style={{ background: 'radial-gradient(ellipse, rgba(220,150,120,0.35) 0%, rgba(230,170,140,0.2) 40%, transparent 70%)' }}
+            />
+            <div
+              className="absolute -inset-12 rounded-[3rem] -z-20 blur-[80px] opacity-60"
+              style={{ background: 'radial-gradient(circle, rgba(255,190,160,0.2) 0%, transparent 60%)' }}
             />
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center gap-2.5">
+        <div className="mt-16 flex flex-col items-center gap-3">
           <div
-            className="w-9 h-9 rounded-full flex items-center justify-center animate-bounce-gentle"
-            style={{ border: '1.5px solid rgba(150,110,90,0.4)' }}
+            className="relative w-11 h-11 rounded-full flex items-center justify-center animate-bounce-gentle group-hover:scale-110 transition-transform"
+            style={{
+              border: '2px solid rgba(150,110,90,0.3)',
+              background: 'linear-gradient(135deg, rgba(255,245,235,0.8) 0%, rgba(255,230,210,0.5) 100%)',
+              boxShadow: '0 4px 16px rgba(150,110,90,0.12), inset 0 1px 0 rgba(255,255,255,0.5)'
+            }}
           >
-            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="#8a6a5a" strokeWidth={2}>
+            <div className="absolute inset-0 rounded-full animate-ring-expand opacity-30" style={{ border: '1px solid rgba(150,110,90,0.4)' }} />
+            <svg className="w-4 h-4 relative z-10" fill="none" viewBox="0 0 24 24" stroke="#8a6a5a" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
             </svg>
           </div>
-          <p className="font-body text-xs tracking-[0.2em] uppercase font-medium animate-pulse-soft" style={{ color: '#9a7a68' }}>
+          <p className="font-body text-[11px] tracking-[0.25em] uppercase font-bold animate-pulse-soft" style={{ color: '#9a7a68', letterSpacing: '0.3em' }}>
             tap to open
           </p>
         </div>
       </div>
 
-      <div className="absolute bottom-6 flex items-center gap-2.5 animate-fade-in-slow" style={{ color: '#b8978a' }}>
-        <Heart className="w-3 h-3 animate-heartbeat" fill="currentColor" />
-        <span className="font-body text-[10px] tracking-[0.25em] uppercase">made with love</span>
-        <Heart className="w-3 h-3 animate-heartbeat" fill="currentColor" style={{ animationDelay: '0.3s' }} />
+      <div className="absolute bottom-8 flex items-center gap-3 animate-fade-in-slow" style={{ color: '#b8978a' }}>
+        <Heart className="w-3.5 h-3.5 animate-heartbeat" fill="currentColor" style={{ filter: 'drop-shadow(0 2px 4px rgba(184,151,138,0.3))' }} />
+        <span className="font-body text-[10px] tracking-[0.3em] uppercase font-semibold">made with love</span>
+        <Heart className="w-3.5 h-3.5 animate-heartbeat" fill="currentColor" style={{ animationDelay: '0.3s', filter: 'drop-shadow(0 2px 4px rgba(184,151,138,0.3))' }} />
       </div>
     </div>
   );

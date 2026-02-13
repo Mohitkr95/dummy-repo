@@ -21,9 +21,11 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #fdf6f0 0%, #fef0e8 25%, #fdf2f0 50%, #f9ece6 75%, #fdf6f0 100%)' }}>
-      <div className="fixed inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse at top center, rgba(255,228,210,0.25) 0%, transparent 60%)' }} />
-      <div className="fixed inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse at bottom right, rgba(255,218,200,0.15) 0%, transparent 50%)' }} />
+    <div className="min-h-screen relative overflow-hidden" style={{ background: 'linear-gradient(160deg, #fff9f4 0%, #ffe8db 20%, #ffd9c8 40%, #ffe4d6 60%, #fff2eb 80%, #fff9f4 100%)' }}>
+      <div className="fixed inset-0 pointer-events-none" style={{ background: 'radial-gradient(circle at 20% 30%, rgba(255,200,170,0.3) 0%, transparent 50%)' }} />
+      <div className="fixed inset-0 pointer-events-none" style={{ background: 'radial-gradient(circle at 80% 70%, rgba(255,215,190,0.25) 0%, transparent 60%)' }} />
+      <div className="fixed inset-0 pointer-events-none" style={{ background: 'radial-gradient(circle at 50% 50%, rgba(255,230,210,0.15) 0%, transparent 70%)' }} />
+      <div className="fixed inset-0 pointer-events-none opacity-40" style={{ backgroundImage: 'radial-gradient(circle at 25% 25%, rgba(210,140,120,0.05) 1px, transparent 1px), radial-gradient(circle at 75% 75%, rgba(210,140,120,0.05) 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
 
       <FloatingHearts />
 
